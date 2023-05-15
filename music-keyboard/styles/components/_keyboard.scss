@@ -1,0 +1,60 @@
+@import '../abstract/variables';
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+$border: 30px;
+$size-key: 120px;
+
+body {
+    @include flex;
+    background-image: $background-body;
+    flex-direction: column;
+    min-height: 100vh;
+
+    .keyboard {
+        background: $background-keyboard;
+        box-shadow: $shadow-keyboard;
+        border-radius: $border;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 10px;
+
+        .key {
+            font-family: $font;
+            background-color: $white;
+            border-radius: $border;
+            box-shadow: 3px 3px 0 $grey;
+            color: rgb(79, 0, 116);
+            cursor: pointer;
+            height: $size-key;
+            font-size: 1.75em;
+            font-weight: $font-bold;
+            line-height: 120px;
+            text-align: center;
+            width: 120px;
+
+            &:active {
+                background-image: $background-key;
+                border: 2px solid $light-purple;
+                box-shadow: 3px 3px 0 $light-purple;
+                color: $white;
+                outline: none;
+            }
+
+            &:focus {
+                outline: none;
+                box-shadow: 2px 2px 10px black;
+            }
+
+            &:active:focus {
+                box-shadow: 3px 3px 0 $light-purple inset;
+            }
+        }
+    }
+
+}
