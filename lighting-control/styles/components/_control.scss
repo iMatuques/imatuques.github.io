@@ -1,0 +1,117 @@
+@import '../abstract/variables';
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+body {
+    @include flex;
+    background-color: $bg-color-body;
+    color: $font-color;
+    width: 100%;
+    height: 100vh;
+
+    main {
+        @include flex;
+        width: 430px;
+        height: 932px;
+        background-color: $bg-color-control;
+        flex-direction: column;
+        padding: 52px;
+        position: relative;
+        overflow: hidden;
+
+        .preview {
+            display: flex;
+            width: 846px;
+            height: 846px;
+            background-color: red;
+            border-radius: 50%;
+            box-shadow: 0px 0px 53px 13px red;
+            position: absolute;
+            top: -500px;
+        }
+
+        .name {
+            font-size: 30px;
+            line-height: 38px;
+            text-align: center;
+            margin: 350px 0 100px;
+        }
+
+        .controls {
+
+            i {
+                font-size: 28px;
+            }
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 321px;
+            gap: 82px;
+
+        .hue,
+        .brightness,
+        .contrast {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .hue>div,
+        .brightness>div,
+        .contrast>div {
+            display: flex;
+            align-items: center;
+            height: 5px;
+            border-radius: 12px;
+            background-color: #fff;
+        }
+
+        .hue>div {
+            background: linear-gradient(to right,
+                red,
+                yellow,
+                lime,
+                aqua,
+                blue,
+                magenta,
+                red);
+          }
+
+        input[type="range"] {
+            width: 281px;
+            height: 4px;
+            appearance: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .hue>div>input[type="range"]::-webkit-slider-thumb,
+        .brightness>div>input[type="range"]::-webkit-slider-thumb,
+        .contrast>div>input[type="range"]::-webkit-slider-thumb {
+            width: 18px;
+            height: 18px;
+            border: 3px solid #fff;
+            background-color: transparent;
+            appearance: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .brightness>div>input[type="range"]::-webkit-slider-thumb,
+        .contrast>div>input[type="range"]::-webkit-slider-thumb {
+            background-color: #151515;
+            border: 3px solid #fff;
+        }
+
+    }
+
+    }
+}

@@ -1,0 +1,101 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #242424;
+  color: #fff;
+  width: 100%;
+  height: 100vh;
+}
+body main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 430px;
+  height: 932px;
+  background-color: #151515;
+  flex-direction: column;
+  padding: 52px;
+  position: relative;
+  overflow: hidden;
+}
+body main .preview {
+  display: flex;
+  width: 846px;
+  height: 846px;
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: 0px 0px 53px 13px red;
+  position: absolute;
+  top: -500px;
+}
+body main .name {
+  font-size: 30px;
+  line-height: 38px;
+  text-align: center;
+  margin: 350px 0 100px;
+}
+body main .controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 321px;
+  gap: 82px;
+}
+body main .controls i {
+  font-size: 28px;
+}
+body main .controls .hue,
+body main .controls .brightness,
+body main .controls .contrast {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+body main .controls .hue > div,
+body main .controls .brightness > div,
+body main .controls .contrast > div {
+  display: flex;
+  align-items: center;
+  height: 5px;
+  border-radius: 12px;
+  background-color: #fff;
+}
+body main .controls .hue > div {
+  background: linear-gradient(to right, red, yellow, lime, aqua, blue, magenta, red);
+}
+body main .controls input[type=range] {
+  width: 281px;
+  height: 4px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+body main .controls .hue > div > input[type=range]::-webkit-slider-thumb,
+body main .controls .brightness > div > input[type=range]::-webkit-slider-thumb,
+body main .controls .contrast > div > input[type=range]::-webkit-slider-thumb {
+  width: 18px;
+  height: 18px;
+  border: 3px solid #fff;
+  background-color: transparent;
+  -webkit-appearance: none;
+          appearance: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+body main .controls .brightness > div > input[type=range]::-webkit-slider-thumb,
+body main .controls .contrast > div > input[type=range]::-webkit-slider-thumb {
+  background-color: #151515;
+  border: 3px solid #fff;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}/*# sourceMappingURL=style.css.map */
